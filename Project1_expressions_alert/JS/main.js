@@ -15,3 +15,39 @@ document.write("<p>Daughter</p>")
 //   (5 + 3) * 2  evaluates to 16  
 let result = (5.4 + 3) * 2.55;
 document.write(result); 
+(function() {
+  const target = document.getElementById('tapTarget');
+  let startX, startY, startTime;
+
+  // Record where & when touch starts
+  target.addEventListener(
+    'touchstart',
+    e => {
+      const t = e.changedTouches[0];
+      startX = t.pageX;
+      startY = t.pageY;
+      startTime = Date.now();
+    },
+    { passive: true }
+  );
+
+  // On touch end, check duration and movement
+  target.addEventListener('touchend', e => {
+    const t = e.changedTouches[0];
+    const dx = Math.abs(t.pageX - startX);
+    const dy = Math.abs(t.pageY - startY);
+    const dt = Date.now() - startTime;
+
+    // If quick tap (<300ms) with minimal move (<10px), fire tap handler
+    if (dt < 300 && dx < 10 && dy < 10) {
+      onTap();
+    }
+  });
+
+  // Fallback for desktop clicks
+  target.addEventListener('click', onTap);
+
+  function onTap() {
+    window.alert('Blessed Be The Name of the Lord');
+  }
+})();
