@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>getElementById Demo</title>
+  <style>
+    #greeting {
+      font-size: 1.5rem;
+      color: darkslategray;
+      margin: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Element we’ll target -->
+  <div id="greeting">Original text</div>
+
+  <script>
+    // 1. Grab the element whose id is "greeting"
+    const greetingEl = document.getElementById('greeting');
+
+    // 2. Change its text
+    greetingEl.textContent = 'Hello, Odunayo! You’ve selected me with getElementById.';
+
+    // 3. Update its style
+    greetingEl.style.color = 'teal';
+    greetingEl.style.fontWeight = 'bold';
+  </script>
+</body>
+</html>
