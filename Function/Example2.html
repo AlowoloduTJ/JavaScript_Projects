@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Function Demo</title>
+</head>
+<body>
+  <h1>Nested Function Example</h1>
+
+  <button onclick="outerFunction()">Run Nested Function</button>
+  <p id="output"></p>
+
+  <script>
+    function outerFunction() {
+      // Outer function variable
+      const greeting = "Hello";
+
+      // Inner function defined inside outer function
+      function innerFunction(name) {
+        return `${greeting}, ${name}! Welcome.`;
+      }
+
+      // Call the inner function from the outer
+      const message = innerFunction("Taiwo");
+
+      // Display the result in the browser
+      document.getElementById("output").textContent = message;
+    }
+  </script>
+</body>
+</html>
