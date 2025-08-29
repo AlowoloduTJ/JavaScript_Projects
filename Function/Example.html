@@ -2,12 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Page</title>
+  <title>Live Date, Time & Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #currentDateTime {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      color: #2c3e50;
+    }
+    #greeting {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #16a085;
+    }
+  </style>
 </head>
-<script src="main3.js"></script>
 <body>
-  <p id="Counting" onclick="count_Function()"> Click here.</p>  
-    
+  <h1>Live Date, Time & Greeting</h1>
+  <p id="currentDateTime"></p>
+  <p id="greeting"></p>
+
+  <script>
+    function updateDateTimeAndGreeting() {
+      const now = new Date();
+
+      // Format date & time
+      const dateString = now.toLocaleDateString();
+      const timeString = now.toLocaleTimeString();
+
+      // Update the date & time display
+      document.getElementById("currentDateTime").textContent =
+        `Today is ${dateString}, Current time: ${timeString}`;
+
+      // Get the current hour
+      const hour = now.getHours();
+      let message = "";
+
+      // Decide the greeting
+      if (hour < 12) {
+        message = "Good morning!";
+      } else if (hour < 18) {
+        message = "Good afternoon!";
+      } else {
+        message = "Good evening!";
+      }
+
+      // Display the greeting
+      document.getElementById("greeting").textContent = message;
+    }
+
+    // Initial call
+    updateDateTimeAndGreeting();
+
+    // Update every second
+    setInterval(updateDateTimeAndGreeting, 1000);
+  </script>
 </body>
 </html>

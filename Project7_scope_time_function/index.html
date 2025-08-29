@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Date, Time & Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #currentDateTime {
+      font-size: 1.5rem;
+      margin: 10px 0;
+      color: #2c3e50;
+    }
+    #greeting {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #16a085;
+    }
+  </style>
+</head>
+<body>
+    <section>
+          <h1>JavaScript Global and Local Variables</h1>
+          <p>Open your browser console to see the output.</p>
+    </section>
+    
+  <h1>Live Date, Time & Greeting</h1>
+
+  <p id="currentDateTime"></p>
+  <p id="greeting"></p>
+  <section>
+     <!-- Instructions for the user -->
+  <p>Please enter a number. If it is 10 or greater, you will see a special message.</p>
+
+  <!-- Input element with id -->
+  <input type="number" id="userNumber" placeholder="Enter a number">
+
+  <!-- Paragraph to display the result -->
+  <p id="result"></p>
+
+  <!-- Button that calls the function in main.js -->
+  <button onclick="checkNumber()">Check Number</button>
+  </section>
+
+  <!-- Link to external JavaScript file -->
+  <script src="JS/main.js"></script>
+</body>
+</html>
