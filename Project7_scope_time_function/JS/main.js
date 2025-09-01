@@ -57,4 +57,18 @@ function checkNumber() {
   } else {
     document.getElementById("result").textContent = "❌ Your number is less than 10.";
   }
-}
+};
+function concatenateWords() {
+  // Get values from the input fields
+  const firstWord = document.getElementById("word1").value;
+  const secondWord = document.getElementById("word2").value;
+  const thirdWord = document.getElementById("word3").value;
+  const fourthWord = document.getElementById("word4").value;
+
+  // Concatenate with a space in between
+  const combined = firstWord + " " + secondWord + " " + thirdWord + " " + fourthWord;
+
+  // Display the result
+  document.getElementById("result1").textContent = "Concatenated: " + combined;
+};
+
