@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String concat() Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f4f7f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .field {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    button#concatBtn {
+      background-color: #28a745;
+      color: white;
+    }
+    button#clearBtn {
+      background-color: #dc3545;
+      color: white;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    };
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    #result3 {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;}
+       body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f0f4f8;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    #result4 {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #result6 {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            width: 100%;
+        }
+
+        #result {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        };
+body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f7f9fc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .field {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #result9 {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    
+    };
+      #result10 {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    };
+
+  </style>
+</head>
+<body>
+  <h1>Concatenate Your Strings</h1>
+
+  <form id="concatForm" novalidate>
+    <div class="field">
+      <label for="str1">String 1 (required)</label>
+      <input id="str1" type="text" placeholder="Enter first string" required />
+    </div>
+    <div class="field">
+      <label for="str2">String 2 (required)</label>
+      <input id="str2" type="text" placeholder="Enter second string" required />
+    </div>
+    <div class="field">
+      <label for="str3">String 3 (optional)</label>
+      <input id="str3" type="text" placeholder="Enter third string (or leave blank)" />
+    </div>
+
+    <button type="submit" id="concatBtn">Concat It!</button>
+    <button type="button" id="clearBtn">Clear</button>
+  </form>
+
+  <div id="result" aria-live="polite">
+    
+  </div>
+  
+    <h2>Convert to Uppercase 🔠</h2>
+
+  <input type="text" id="textInput" placeholder="Enter your text here" />
+  <button id="convertBtn">Convert</button>
+
+  <div id="result3"></div>
+  <section>
+   <h2>Search Within Text 🔍</h2>
+
+  <input type="text" id="mainText" placeholder="Enter main text here" />
+  <input type="text" id="searchTerm" placeholder="Enter search term or pattern" />
+  <button id="searchBtn">Search</button>
+
+  <div id="result4"></div>
+  </section>
+  <section>
+    h1>Convert Number to String</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button onclick="convertNumberToString()">Convert to String</button>
+
+    <div id="result6"></div>
+
+  </section>
+  <div>
+<section>
+    <h1>Precision Calculator</h1>
+    
+    <div class="input-container">
+        <input 
+            type="number" 
+            id="number1" 
+            placeholder="Enter first number"
+        >
+        
+        <select id="operation">
+            <option value="add">Addition (+)</option>
+            <option value="subtract">Subtraction (-)</option>
+            <option value="multiply">Multiplication (*)</option>
+            <option value="divide">Division (/)</option>
+        </select>
+        
+        <input 
+            type="number" 
+            id="number2" 
+            placeholder="Enter second number"
+        >
+        
+        <input 
+            type="number" 
+            id="precision" 
+            placeholder="Enter precision (1-15)"
+            min="1" 
+            max="15"
+        >
+        
+        <button onclick="calculateWithPrecision()">
+            Calculate with Precision
+        </button>
+    </div>
+
+    <div id="result6"></div>
+</section>
+  </div>
+<h2>Round a Number with toFixed()</h2>
+
+  <div class="field">
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="e.g. 3.14159" step="any" />
+  </div>
+
+  <div>
+
+  <div class="field">
+    <label for="decimalPlaces">Decimal places:</label>
+    <input type="number" id="decimalPlaces" placeholder="e.g. 2" min="0" />
+  </div>
+
+  <button id="formatBtn">Format Number</button>
+
+  <div id="result9"></div>
+  </div>
+  <section>
+<h2>Use valueOf() on Your Input</h2>
+
+  <div class="field">
+    <label for="inputValue">Enter a value (string or number):</label>
+    <input type="text" id="inputValue" placeholder="e.g. 42 or Hello" />
+  </div>
+
+  <button id="valueBtn">Get Primitive Value</button>
+
+  <div id="result10"></div>
+
+  <script src="script.js" defer></script>
+  </section>
+
+  <script src="JS/main.js" defer></script>
+</body>
+</html>
