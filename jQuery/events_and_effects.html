@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events and Effects</title>
+    <!-- Include the jQuery library from a CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-box {
+            width: 150px;
+            height: 150px;
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 250px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>jQuery Events & Effects</h1>
+        <p>Click the buttons below to see events trigger effects.</p>
+
+        <!-- Element to be manipulated -->
+        <div id="fadeBox" class="demo-box" style="background-color: #ef4444;">
+            <p>Click me to Fade!</p>
+        </div>
+
+        <button id="toggleBtn">Slide Toggle</button>
+        <button id="showBtn">Show Box</button>
+        <button id="hideBtn">Hide Box</button>
+        
+        <p>Double-click this text to see a flash and hide effect!</p>
+        
+        <form id="myForm" action="#" method="post">
+            <input type="text" id="myInput" placeholder="Type something here">
+            <br>
+            <button type="submit">Submit Form</button>
+        </form>
+        
+        <p id="message"></p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // --- Events & Effects Demonstration ---
+
+            // 1. Click() Event & SlideToggle() Effect
+            // When the "Slide Toggle" button is clicked, it will toggle the visibility of the demo box
+            // with a sliding animation.
+            $("#toggleBtn").click(function() {
+                $(".demo-box").slideToggle();
+            });
+
+            // 2. Click() Event & FadeIn() Effect
+            // When the "Show Box" button is clicked, it will fade in the demo box if it's hidden.
+            $("#showBtn").click(function() {
+                $(".demo-box").fadeIn();
+            });
+
+            // 3. Click() Event & FadeOut() Effect
+            // When the "Hide Box" button is clicked, it will fade out the demo box.
+            $("#hideBtn").click(function() {
+                $(".demo-box").fadeOut();
+            });
+
+            // 4. Dblclick() Event & Hide() Effect
+            // When the paragraph is double-clicked, it will hide itself.
+            // We use the `hide()` effect for a simple disappearance.
+            $("p:last-of-type").dblclick(function() {
+                $(this).hide();
+            });
+
+            // 5. Keypress() Event
+            // When a key is pressed inside the input field, it will append a message to the #message paragraph.
+            $("#myInput").keypress(function() {
+                $("#message").text("You pressed a key!").fadeIn().delay(1000).fadeOut();
+            });
+
+            // 6. Submit() Event
+            // When the form is submitted, this event prevents the default action (page reload)
+            // and shows a success message.
+            $("#myForm").submit(function(event) {
+                // Prevent the default form submission behavior
+                event.preventDefault();
+                // Show a success message
+                $("#message").text("Form submission was prevented!").css("color", "green").fadeIn();
+            });
+        });
+    </script>
+
+</body>
+</html>
