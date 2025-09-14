@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Define character encoding for proper text rendering -->
+  <meta charset="utf-8">
+
+  <!-- Set the page title shown in the browser tab -->
+  <title>Basic AJAX Demo</title>
+
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main container for the demo -->
+  <div class="main">
+    <!-- Heading for the content section -->
+    <h2>Get The Latest Content:</h2>
+
+    <!-- Content area where AJAX response will be injected -->
+    <div class="content" id="content">
+      <!-- Button that triggers the AJAX request -->
+      <input 
+        type="button" 
+        class="button" 
+        value="Get Content" 
+        id="btn_content" 
+        onclick="getContent();" 
+      />
+    </div>
+  </div>
+
+  <!-- JavaScript section for AJAX functionality -->
+  <script type="text/javascript">
+    // Create a new XMLHttpRequest object
+    var ajax = new XMLHttpRequest();
+
+    // Prepare the GET request to fetch 'content.html'
+    ajax.open("GET", "content.html", true); // true = asynchronous
+
+    // Define what happens when the request state changes
+    ajax.onreadystatechange = function() {
+      // Check if the request is complete and successful
+      if (ajax.readyState === 4 && ajax.status === 200) {
+        // Inject the response HTML into the #content div
+        document.getElementById("content").innerHTML = ajax.responseText;
+      }
+    };
+
+    // Function triggered when the button is clicked
+    function getContent() {
+      // Send the AJAX request
+      ajax.send();
+
+      // Hide the button after it's clicked to prevent repeat requests
+      document.getElementById("btn_content").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
