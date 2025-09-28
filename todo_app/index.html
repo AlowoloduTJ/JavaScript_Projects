@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alowolodu Smart Event Scheduler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>📅Alowolodu Event Scheduler</h1>
+    </header>
+
+    <section class="form-section">
+      <form id="eventForm">
+        <div class="row">
+          <input type="text" id="title" placeholder="Event title" required />
+        </div>
+        <div class="row">
+          <input type="date" id="date" required />
+          <input type="time" id="time" required />
+          <input type="number" id="duration" placeholder="Duration (min)" min="1" required />
+        </div>
+        <div class="row">
+          <select id="recurrence">
+            <option value="none">No recurrence</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+          <input type="number" id="occurrences" placeholder="Occurrences" min="1" value="1" />
+          <button type="submit">Add event</button>
+        </div>
+        <p class="hint">Alarms will trigger 5 minutes before each event.</p>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth" aria-label="Previous month">‹</button>
+        <h2 id="monthLabel"></h2>
+        <button id="nextMonth" aria-label="Next month">›</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid" aria-label="Monthly calendar"></div>
+      <p class="hint">Click a date to filter events.</p>
+    </section>
+
+    <section class="list-section">
+      <h2>Upcoming events</h2>
+      <ul id="eventList"></ul>
+    </section>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
